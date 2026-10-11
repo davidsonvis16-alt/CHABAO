@@ -301,8 +301,8 @@
 .a-ledger-total .mono { color: var(--red); }
 
 /* ---------- modal ---------- */
-.a-overlay { position: fixed; inset: 0; z-index: 80; background: rgba(18,17,16,.5); display: grid; place-items: center; padding: 1rem; overflow-y: auto; }
-.a-modal { width: min(560px, 100%); background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); color: var(--ink); }
+.a-overlay { position: fixed; inset: 0; z-index: 80; background: rgba(18,17,16,.6); display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 1rem; overflow-y: auto; }
+.a-modal { width: min(560px, 100%); min-width: 0; background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); color: var(--ink); }
 .a-modal-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 1.2rem 1.4rem 1rem; border-bottom: 2px solid var(--ink); }
 .a-modal-head h2 { font-family: var(--cond); font-weight: 900; font-stretch: 68%; text-transform: uppercase; font-size: 2.1rem; line-height: .9; }
 .a-modal-body { padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: 1.1rem; }
@@ -315,6 +315,8 @@
 .a-amount-row span { font-family: var(--mono); font-size: 1rem; color: var(--mut); }
 .a-amount-row input { flex: 1; min-width: 0; border: 0; outline: none; background: none; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-size: 4rem; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
 .a-amount-row input[readonly] { color: var(--ink-2); }
+.a-amount-row input:focus-visible { outline: none; }
+.a-amount-row:focus-within { border-color: var(--red); }
 .a-quick { display: flex; gap: .4rem; margin-top: .5rem; }
 .a-quick button { font-family: var(--mono); font-size: .72rem; padding: .3rem .55rem; border: 1px solid var(--ink); }
 .a-quick button:hover { background: var(--ink); color: var(--paper); }
@@ -409,4 +411,8 @@
   .a-drawer-foot { flex-direction: column; }
   .a-context-main > .a-muted { display: none; }
   .a-modal { box-shadow: 5px 5px 0 var(--ink); }
+  .a-overlay { padding: .75rem; place-items: start center; }
+  .a-modal-body, .a-modal-head { padding-left: 1rem; padding-right: 1rem; }
+  .a-seg button { flex: 1 1 45%; border-bottom: 1px solid var(--ink); }
+  .a-amount-row input { font-size: 3.2rem; }
 }

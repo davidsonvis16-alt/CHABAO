@@ -30,8 +30,8 @@ export default function AdminApp() {
   ];
 
   return (
-    <PayProvider>
-      <div className="adm">
+    <div className="adm">
+      <PayProvider>
         <aside className="a-side">
           <Link to="/admin" className="a-brand">
             <span className="a-brand-mark">茶包</span>
@@ -65,7 +65,7 @@ export default function AdminApp() {
             <Route path="payouts" element={<Payouts />} />
           </Routes>
         </main>
-      </div>
-    </PayProvider>
+      </PayProvider>
+    </div>
   );
 }
